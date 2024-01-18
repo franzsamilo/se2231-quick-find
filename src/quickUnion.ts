@@ -9,7 +9,7 @@ export class QuickUnionUF {
     }
   }
 
-  find(i: number) {
+  root(i: number) {
     while(i !== this.ids[i]) {
       i = this.ids[i]
     }
@@ -17,12 +17,12 @@ export class QuickUnionUF {
   }
 
   connected(p: number, q: number): boolean {
-    return this.find(p) === this.find(q)
+    return this.root(p) === this.root(q)
 }
 
   union(p: number, q: number) {
-    let i : number = this.find(p)
-    let j : number = this.find(q)
+    let i : number = this.root(p)
+    let j : number = this.root(q)
     
     this.ids[i] = j
   }
