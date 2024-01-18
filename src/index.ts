@@ -1,10 +1,9 @@
 import readline from 'readline-sync'
 import { QuickFindUF } from './quickuf'
+import { QuickUnionUF } from './quickUnion'
 
-console.log('hi!')
-
-let N = readline.questionInt()
-let uf = new QuickFindUF(N)
+let N = readline.questionInt("How many numbers in an array?")
+let uf = new QuickUnionUF(N)
 let input = readline.question()
 
 while (input !== "") {
